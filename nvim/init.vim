@@ -77,6 +77,8 @@ set tm=500
 " when opening a new buffer, retain the old one
 set hidden
 
+" always show line numbers in the side bar
+set number
 
 """"----____ COLOURS AND FONTS ____----""""
 
@@ -114,11 +116,11 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " tab navitation keys
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext<cr>
+map <silent> <leader>tn :tabnew<cr>
+map <silent> <leader>to :tabonly<cr>
+map <silent> <leader>tc :tabclose<cr>
+map <silent> <leader>tm :tabmove
+map <silent> <leader>t<leader> :tabnext<cr>
 
 " allow returning to the previous tab
 let g:lasttab=1
@@ -193,8 +195,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>[ <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>] <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
