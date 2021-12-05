@@ -80,6 +80,9 @@ set hidden
 " always show line numbers in the side bar
 set number
 
+" hide airline whitespace indicator
+let g:airline#extensions#whitespace#enabled = 0
+
 """"----____ COLOURS AND FONTS ____----""""
 
 " enable proper syntax highlighting
@@ -88,6 +91,7 @@ syntax enable
 "set our colours
 colorscheme dracula
 set background=dark
+
 
 """"----____ INDENTATION SETTINGS ____----""""
 " use spaces and smart tabs
@@ -124,7 +128,7 @@ map <silent> <leader>t<leader> :tabnext<cr>
 
 " allow returning to the previous tab
 let g:lasttab=1
-nmap <leader>tl :exe "tabn ".g:lasttab<CR>
+nmap <silent> <leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab=tabpagenr()
 
 " split keys
@@ -142,17 +146,11 @@ map <leader>rc :e $MYVIMRC<cr>
 map <leader>e :NvimTreeToggle<CR>
 
 " clear search highlights
-map <leader>/ :noh<cr>
+map <silent> <leader>/ :noh<cr>
 
 """"----____ NVIM-TREE ____----""""
-let g:nvim_tree_ignore = ['.git', 'node_modules', 'cache']
-" it's undocumented exactly what this is for, I'm leaving it off until I know
-" let g:nvim_tree_gitignore = 1
-let g:nvim_tree_auto_open = 1
-let g:nvim_tree_auto_close = 1
-let g:nvim_tree_indent_martkers = 1
-let g:nvim_tree_hide_dotfiles = 1
-let g:nvim_tree_tab_open = 1
+let g:nvim_tree_indent_markers = 1
+lua require("tree_setup")
 
 """"----____ COC AUTOCOMPLETE ____----""""
 
@@ -209,6 +207,9 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
+
+      " hite airline whitespace indicator
+      let g:airline#extensions#whitespace#enabled = 0
     execute 'h '.expand('<cword>')
   elseif (coc#rpc#ready())
     call CocActionAsync('doHover')
