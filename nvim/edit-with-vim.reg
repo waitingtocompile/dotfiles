@@ -6,7 +6,7 @@ Windows Registry Editor Version 5.00
 @="Edit with Nvim"
 "Icon"="\"C:\\Program Files\\nvim\\bin\\nvim-qt.exe\""
 
-[HKEY_CLASSES_ROOT\*\Shell\Vim\command]
+[HKEY_CLASSES_ROOT\*\Shell\nvim\command]
 @="\"C:\\Program Files\\nvim\\bin\\nvim-qt.exe\" \"%1\"" 
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\VimHere]
