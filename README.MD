@@ -3,7 +3,7 @@ This is my standard set of dotfiles for various applications (primarily neovim).
 
 
 ### Nvim
-The nvim file held is my *windows* nvim file, though it's almost identical to my linux configuration (a couple of filepaths and fonts need tweaking)
+The nvim file held is my nvim file
 
 It depends on the following:
  - The droid sans mono nerd font at https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/DroidSansMono/complete, which needs to be installed on the system
