@@ -79,6 +79,10 @@ it in), or unfold that folder. There's also, as always, a bunch of other useful 
  - `H` to toggle visibility of dotfiles
  - `R` refreshes the tree (it doesn't always keep updated properly across multiple windows and tabs)
 
+## Block select and multi-line edit
+Pressing CTRL`v` puts you into visual block mode, to select blocks without caring about line wrapping. You can copy, delete, etc entire blocks in one go.
+If you select multiple lines in visual block mode, you can press `I` to enter a multi line insert. Once you exit the insert mode, whatever you've typed will be addded to every line you had selected
+
 ## Git Integration
 Nvim doesn't have any inbuilt git integration, however an extension called fugitive provides full git integration. The `:G` command runs any normal git command in the current directory (for instance `:G push origin main`).
 We also see git information in our airline, showing our current branch and if we have uncommited changes, and in the file browser file icons will indicate their current git status
