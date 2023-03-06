@@ -2,7 +2,7 @@
 This isn't going to be comprehensive, there's a few specifics and niche things that I'm not covering. This is the stuff that I consider fundamental and that I use a lot
 It's also a blend of "normal" nvim stuff, and things that are specific to the configuration I've given you. I'll try to make it clear where I can.
 While this intro is for nvim *almost* all of it can also be applied to "old" vim, obviously excluding all my fun custom fiddles.
-Nvim commands and hotkeys are case sensitive, if I show a captial it means you need to be holding down shift
+Nvim commands and hotkeys are case sensitive, if I show a capital it means you need to be holding down shift
 
 Do not, my friends, become addicted to vim. It will take hold of you, and you will resent its absence!
 
@@ -11,7 +11,7 @@ There's a ton of different modes in vim. Some of these are going to have their o
  - Normal Mode - this is the default mode of vim, think of it as the "hotkey" mode. Almost all of the key bindings are for normal mode. You can almost always get back to normal mode with ESC
  - Insert Mode - this is where you actually type text. Pressing `i` or `a` put you into insert mode at the current cursor position (with `a` putting you "after" the cursor, and `i` putting you before it)
  - Visual Mode - this mode is all about selecting regions of text. Enter it with `v`. This is mostly for doing large copy/delete operations
- - Command Mode - this one isn't really a mode, but instead while you in normal, visual, or a few other modes, `:` starts enterting commands. 
+ - Command Mode - this one isn't really a mode, but instead while you in normal, visual, or a few other modes, `:` starts entering commands. 
  - Search Mode - again, not really a mode but functions like command mode when you press `/`
  - Block Modes - A few modes have special "block" versions, specifically Insert and Visual, that let you do large scale edits across many lines
 
@@ -58,13 +58,13 @@ Using either of these in visual mode just applies to the current selection insta
 Vim's clipboard is seperate from the system clipboard. You can use `,y` to copy the current selection to the system, and `,p` to paste from the system cliboard. (these are both my own custom bindings)
 
 ## Find and replace
-If you want to search the current file for some particular term, you can press `/` to start searching, and press enter to "lock in" that search. Every instance of that term is highligted, and you can jump to to the next one with `n`. You can enter `,/` to clear the search highlights.
+If you want to search the current file for some particular term, you can press `/` to start searching, and press enter to "lock in" that search. Every instance of that term is highlighted, and you can jump to to the next one with `n`. You can enter `,/` to clear the search highlights.
 
-Search and replace uses the `:s` command, it's tedious to esplain all it's mintua here, but it works very well and there's a good explanation at https://vim.fandom.com/wiki/Search_and_replace
+Search and replace uses the `:s` command, it's tedious to explain all it's minutia here, but it works very well and there's a good explanation at https://vim.fandom.com/wiki/Search_and_replace
 Added bonus: you now have the cursed knowledge that there's a vim fandomwiki
 
 ## File browser
-While nvim does have a built in file browser, it sucks ass. Fortunately, one of our addons gives us a very nice filebrowser we can use. If you open vim in a folder, and when you open a new tab, it will be shown on the left by default. You can toggle it on and off with `,e`. You can enter and leave it like any split panel, and navigate around it with `hjkl` or arrow keys. Enter opens the selected file in the current tab (if you have multiple split panels, it'll prompt you for which one to open
+While nvim does have a built in file browser, it sucks ass. Fortunately, one of our add-ons gives us a very nice file browser we can use. If you open vim in a folder, and when you open a new tab, it will be shown on the left by default. You can toggle it on and off with `,e`. You can enter and leave it like any split panel, and navigate around it with `hjkl` or arrow keys. Enter opens the selected file in the current tab (if you have multiple split panels, it'll prompt you for which one to open
 it in), or unfold that folder. There's also, as always, a bunch of other useful hotkeys:
  - `r` to rename the selected file
  - `y` to copy the filename to clipboard
